@@ -1,0 +1,14 @@
+import org.gradleware.ConvertMountainXml;
+apply from: 'gradle/wrapper.gradle'
+
+task generateMountainFiles1(type: ConvertMountainXml) {
+	outputDir = "$buildDir/mountains1" as File
+	xmlFile = file("src/mountains1.xml")
+	separator = ":"
+}
+
+task generateMountainFiles2(type: ConvertMountainXml) {
+	outputDir = "$buildDir/mountains2" as File
+	xmlFile = file("src/mountains2.xml")
+	separator = ":"
+}

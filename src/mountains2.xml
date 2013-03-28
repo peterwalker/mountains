@@ -1,0 +1,10 @@
+<mountains>
+	<mountain>
+		<name>McKinley</name>
+		<height>20328</height>
+	</mountain>
+	<mountain>
+		<name>Snowdon</name>
+		<height>3406</height>
+	</mountain>
+</mountains>
