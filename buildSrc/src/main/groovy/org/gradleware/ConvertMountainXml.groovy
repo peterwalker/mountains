@@ -13,12 +13,11 @@ class ConvertMountainXml extends DefaultTask {
 	@OutputDirectory
 	File outputDir
 
-	ConvertMountainXml() {
-		outputs.upToDateWhen {
-
-		}
+	ConvertMountainXml(){
+		description = "Converts mountains files"
+		group = "Mountain"
 	}
-
+	
 	@TaskAction
 	public void generate() {
 		def mountains = new XmlSlurper().parse(xmlFile)

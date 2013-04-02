@@ -1,14 +1,15 @@
-import org.gradleware.ConvertMountainXml;
+apply plugin: 'base'
 apply from: 'gradle/wrapper.gradle'
+import org.gradleware.ConvertMountainXml;
 
 task generateMountainFiles1(type: ConvertMountainXml) {
-	outputDir = "$buildDir/mountains1" as File
+	outputDir = "$buildDir/mountains" as File
 	xmlFile = file("src/mountains1.xml")
 	separator = ":"
 }
 
 task generateMountainFiles2(type: ConvertMountainXml) {
-	outputDir = "$buildDir/mountains2" as File
+	outputDir = "$buildDir/mountains" as File
 	xmlFile = file("src/mountains2.xml")
 	separator = ":"
 }
@@ -18,3 +19,6 @@ task build (dependsOn:
 		task.name.startsWith("generateMountainFiles")
 	}
 )
+
+build.mustRunAfter clean
+task cleanBuild(dependsOn: [clean,build])
