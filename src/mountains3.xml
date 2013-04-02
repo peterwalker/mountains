@@ -1,0 +1,10 @@
+<mountains>
+	<mountain>
+		<name>Big</name>
+		<height>999</height>
+	</mountain>
+	<mountain>
+		<name>Small</name>
+		<height>21</height>
+	</mountain>
+</mountains>
