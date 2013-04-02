@@ -12,3 +12,9 @@ task generateMountainFiles2(type: ConvertMountainXml) {
 	xmlFile = file("src/mountains2.xml")
 	separator = ":"
 }
+
+task build (dependsOn: 
+	getTasks().matching { task->
+		task.name.startsWith("generateMountainFiles")
+	}
+)
