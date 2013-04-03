@@ -16,4 +16,4 @@ task build (dependsOn:
 )
 
 build.mustRunAfter clean
-task cleanBuild(dependsOn: [clean,build])
+task cleanAndBuild(dependsOn: [clean,build])
