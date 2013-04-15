@@ -4,6 +4,7 @@ import org.gradle.api.*
 import org.gradle.api.tasks.*
 import org.gradle.api.execution.*
 import org.apache.commons.io.*
+import org.gradle.api.tasks.incremental.*
 
 class ConvertAllMountainsXml extends DefaultTask {
 	@InputDirectory
@@ -21,7 +22,7 @@ class ConvertAllMountainsXml extends DefaultTask {
 	}
 
 	@TaskAction
-	public void generate(TaskInputChanges inputs) {
+	public void generate(IncrementalTaskInputs inputs) {
 		inputs.outOfDate({ change ->
 			logger.lifecycle ("$change.file is out of date")
 			inputDir.eachFile { file-> processFile(change.file) }
